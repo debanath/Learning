@@ -49,7 +49,9 @@ const car2: CarsInterface = {
     model : "Harier",
     color : "White",
 }
-// the above code will show an error because we didn't mention the `manufacturer` but it will not show error if we only had missed the `speedInKmph` because it has a `?` at the end , which makes it an optional parameter
+/*the above code will show an error because we didn't mention the `manufacturer` but it will not show
+error if we only had missed the `speedInKmph` because it has a `?` at the end , which makes it an
+optional parameter*/
 ```
 <br><br>
 
@@ -57,7 +59,8 @@ const car2: CarsInterface = {
 Types are used to make alias to built in or user defined types. Example of how to define types and use union operator are shown below:
 ```ts
 type someVar = string; // now we can use `someVar` to define a type isntead of string
-type someAnotherVar = string | number | null | undefined; // now `someAnotherVar` can be used to define a type that can be either string, number, null or undefined
+type someAnotherVar = string | number | null | undefined; /* now `someAnotherVar` can be used to
+define a type that can be either string, number, null or undefined*/
 ```
 
 <br><br>
@@ -94,11 +97,14 @@ let unknownVar:unknown = 20;
 
 //Type Aggression
 let someOtherVar:string = anyVar // this will work this fine because it is of any type
-let someMoreOtherVar:string = unknownVar // this will show an error because the compiler doesn't know what is the type of the variable to fix this error we need to tell the compiler what is the type of the variable
+let someMoreOtherVar:string = unknownVar /* this will show an error because the compiler doesn't know
+what is the type of the variable to fix this error we need to tell the compiler what is the type of
+the variable*/
 let fixedSomeMoreOtherVar:string = unknownVar as string
 
 
 //Also if you want to convert a string into number you need to do the following
 let strVar:string = "100";
-let numVar:number = (strVar as unknown) as number; //because compiler cannot directly convert string to number we need to make the string into unknown and then into number
+let numVar:number = (strVar as unknown) as number; /*because compiler cannot directly convert string
+to number we need to make the string into unknown and then into number*/
 ```
